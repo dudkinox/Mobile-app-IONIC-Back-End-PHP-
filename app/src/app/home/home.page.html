@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div align="center">
+    <h1>6111500143</h1>
+    <h1>ศุภณัฐ ชินราช</h1>
+    <ion-button (click)="register()" color="primary">login click</ion-button>
+  </div>
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button class="menu" color="light">
+      <img src="https://img.icons8.com/dusk/30/000000/drag-list-down.png" />
+    </ion-fab-button>
+    <ion-fab-list side="bottom">
+      <ion-fab-button (click)="register()"
+        ><img src="https://img.icons8.com/dusk/25/000000/forgot-password.png"
+      /></ion-fab-button>
+      <ion-fab-list side="bottom">
+        <ion-fab-button href="https://www.facebook.com/"
+          ><img
+            src="https://img.icons8.com/dusk/25/000000/facebook-new--v2.png"
+        /></ion-fab-button>
+
+        <ion-fab-list side="bottom">
+          <ion-fab-button href="https://www.instagram.com/"
+            ><img src="https://img.icons8.com/dusk/25/000000/instagram.png"
+          /></ion-fab-button>
+
+          <ion-fab-list side="bottom">
+            <ion-fab-button href="https://github.com/"
+              ><img src="https://img.icons8.com/dusk/25/000000/github.png"
+            /></ion-fab-button>
+          </ion-fab-list>
+        </ion-fab-list>
+      </ion-fab-list>
+    </ion-fab-list>
+  </ion-fab>
+</ion-content>

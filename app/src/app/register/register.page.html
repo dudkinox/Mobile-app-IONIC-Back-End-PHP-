@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>register</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-label>ไอดี :</ion-label>
+    <ion-input type = "text" placeholder = "ชื่อผู้ใช้" [(ngModel)] = "RegisterData.username" required></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>รหัสผ่าน :</ion-label>
+    <ion-input type = "password" placeholder = "*******" [(ngModel)] = "RegisterData.pass1" required></ion-input>
+  </ion-item>
+  <ion-item>
+  <ion-label>ยืนยันรหัสผ่าน :</ion-label>
+  <ion-input type = "password" placeholder = "*******" [(ngModel)] = "RegisterData.pass2" required></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>ชื่อ - นามสกุล :</ion-label>
+    <ion-input type = "text" placeholder = "กรอกชื่อ-นามสกุล" [(ngModel)] = "RegisterData.names" required></ion-input>
+  </ion-item>
+    <ion-item>
+      <ion-label>เพศ :</ion-label>
+      <ion-select value="boy" [(ngModel)] = "RegisterData.sex" required>
+        <ion-select-option value="boy">ชาย</ion-select-option>
+        <ion-select-option value="girl">หญิง</ion-select-option>
+      </ion-select>
+    </ion-item>
+  <ion-item>
+    <ion-label>วันเดือนปีเกิด :</ion-label>
+    <ion-datetime value="1999-01-1" min="1920-02" max="2020"
+      displayFormat="DD / MMM / YYYY"
+      monthShortNames="ม.ค., ก.พ., มี.ค., เม.ย., พ.ค., มิ.ย., ก.ค., ส.ค., ก.ย., ต.ค., พ.ย., ธ.ค." [(ngModel)] = "RegisterData.date" required ></ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-label>Pin :</ion-label>
+    <ion-input type="number" placeholder = "กรอก Pin 4 ตัว" [(ngModel)] = "RegisterData.pin" 
+               onkeypress="return this.value.length < 4;" oninput="
+                if(this.value.length>=4) { 
+                  this.value = this.value.slice(0,4); }" required>
+    </ion-input>
+  </ion-item>
+  
+  <br>
+  <div align = "center">
+    <ion-checkbox color="primary" slot="start" id="check" [(ngModel)] = "RegisterData.check" required></ion-checkbox>
+    <ion-label> ข้าพเจ้าเข้าใจและตกลงตาม <a href="#">เงื่อนไขการให้บริการ</a>และ <a href="#">นโยบายความเป็นส่วนตัว</a></ion-label>
+  </div>
+  <br>
+  <div align = "center">
+    <ion-button color="success" (click)="register()">สมัครสมาชิก</ion-button>
+  </div>
+</ion-content>
